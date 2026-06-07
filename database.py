@@ -1,14 +1,16 @@
 import mysql.connector
 
-def get_connection():
-    try:
-        connection = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="grupo5@",
+def obtemConexao():
+    if obtemConexao.conexao == None:
+        obtemConexao.conexao = mysql.connector.connect(
+            host="172.16.12.14",
+            user="BD240226160",
+            password="Narho10",
             database="vet_db"
         )
-        return connection
-    except mysql.connector.Error as e:
-        print("Database connection error:", e)
-        return None
+
+    return obtemConexao.conexao
+obtemConexao.conexao = None
+
+
+
