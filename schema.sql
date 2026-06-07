@@ -33,7 +33,7 @@ CREATE TABLE appointment (
     gravidade int not null,
     urgencia int not null,
     prioridade int not null,
-    FOREIGN KEY (id_pet) REFERENCES pet(id)
+    FOREIGN KEY (id_pet) REFERENCES pet(id_pet)
 );
 
 -- Cadastro de usuários
