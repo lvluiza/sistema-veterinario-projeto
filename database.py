@@ -1,16 +1,21 @@
+# Não esquecer de instalar o conector do MySQL para Python(NO TERMINAL):
+# python -m pip install mysql-connector-python
+
 import mysql.connector
 
-def obtemConexao():
-    if obtemConexao.conexao == None:
-        obtemConexao.conexao = mysql.connector.connect(
-            host="172.16.12.14",
-            user="BD240226160",
-            password="Narho10",
+
+def get_connection():
+    try:
+        connection = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            port=3306,
+            password="Gaiguinho10@",
             database="vet_db"
         )
-
-    return obtemConexao.conexao
-obtemConexao.conexao = None
-
-
+        return connection
+    except mysql.connector.Error as e:
+        print("Database connection error:", e)
+        return None
+    
 
